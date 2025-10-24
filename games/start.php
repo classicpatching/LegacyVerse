@@ -2,15 +2,15 @@
 // start.php
 header("Content-Type: application/json");
 
-$placeId = $_GET['placeId'] ?? 1;
+$placeid = $_GET['placeid'] ?? 1;
 $userId = $_GET['userId'] ?? 1;
 
 // This is your joinScriptUrl — points to the same start.php
-$joinUrl = "http://www.fotone.com/games/start?placeId={$placeId}&userId={$userId}";
+$joinUrl = "http://www.fotone.com/games/start?placeid={$placeid}&userId={$userId}";
 
 $response = [
     "status" => "2",
-    "jobId" => "Test_" . $placeId,
+    "jobId" => "Test_" . $placeid,
     "authenticationUrl" => "http://www.fotone.com/Login/Negotiate.ashx",
     "authenticationTicket" => "SomeTicketThatDosentCrash",
     "joinScriptUrl" => $joinUrl
