@@ -1,2 +1,15 @@
+# Keep your existing rules here
+# ...
+
+# Serve /mobileapi/login without redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If request is exactly /mobileapi/login (no trailing slash) and is a directory
+    RewriteCond %{REQUEST_URI} ^/mobileapi/login$
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ /mobileapi/login/index.php [L]
+</IfModule>
+
+# Optional: prevent trailing slash redirect globally
 DirectorySlash Off
-Options -Indexes
