@@ -5,11 +5,10 @@ header("Access-Control-Allow-Origin: *");
 $response = [
     "Status" => "OK",
     "UserInfo" => [
-        "UserName" => "admin",
-        "UserPassword" => "blank",
+        "UserName" => "LegacyVerse Test Account",
         "UserID" => 1,
-        "RobuxBalance" => 99999,
-        "TicketsBalance" => 99999,
+        "RobuxBalance" => 2014,
+        "TicketsBalance" => 999999999,
         "IsAnyBuildersClubMember" => true,
         "ThumbnailUrl" => "https://legacyverse.onrender.com/avatar.webp"
     ]
