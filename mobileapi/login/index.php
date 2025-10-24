@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
-header("Access-Control-Allow-Origin: *"); // allows requests from mobile apps
+header("Access-Control-Allow-Origin: *");
 
 $response = [
     "Status" => "OK",
@@ -17,4 +17,3 @@ $response = [
 
 echo json_encode($response, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 exit;
-?>
