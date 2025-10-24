@@ -1,23 +1,21 @@
-# Enable mod_rewrite
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
 # ----------------------------
-# Universal internal rewrite for existing folders
+# Serve index.php inside folders if it exists
 # ----------------------------
-# If request is to a directory and has index.php, serve it internally
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_FILENAME}/index.php -f
 RewriteRule ^(.*)$ $1/index.php [L]
 
 # ----------------------------
-# If the request is a file and exists, serve normally
+# Serve files if they exist
 # ----------------------------
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
 # ----------------------------
-# If nothing matches (file or folder does not exist), redirect to 404.php
+# Redirect anything else to 404.php
 # ----------------------------
 RewriteRule ^.*$ /404.php [L]
 </IfModule>
@@ -25,5 +23,5 @@ RewriteRule ^.*$ /404.php [L]
 # Disable automatic trailing slash redirect
 DirectorySlash Off
 
-# Security: prevent directory listing
+# Prevent directory listing
 Options -Indexes
