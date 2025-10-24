@@ -6,5 +6,5 @@ Make Friends!
 Share Your Games!
 Play Games!
 # Info
-Default Avatar You Would Get upon Signing up
+- Default Avatar You Would Get upon Signing up.
 ![avatar.webp](avatar.webp)
