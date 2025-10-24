@@ -1,9 +1,11 @@
 # LegacyVerse
 
 Welcome Back…  
-To 2014!  
+To **2014**!  
 
-Relive the good old days on your **Android device** and:  
+Relive the good old days on your **Android device**!  
+
+Here you can:  
 - Make friends  
 - Share your games  
 - Play games  
@@ -24,7 +26,7 @@ Default Avatar You Get When Signing Up:
 ## TODO
 - [ ] Trust Check  
 - [ ] RCC  
-- [x] Accounts  
+- [ ] Accounts  
 - [ ] Games  
 - [ ] Catalog  
 - [ ] Avatar  
@@ -33,29 +35,34 @@ Default Avatar You Get When Signing Up:
 
 ## Terms of Service (ToS)
 
-By joining LegacyVerse:  
+By using LegacyVerse:  
 
 1. **Be Cool**  
    - No bullying, scamming, or griefing other players.  
    - Respect other players’ creations.  
 
-2. **Share Right**  
-   - Only upload stuff you own or have permission for.  
+2. **Content Rules**  
+   - Only upload content you own or have permission for.  
    - No illegal or copyrighted content.  
 
-3. **Your Account = Your Responsibility**  
-   - Keep it safe; we cannot recover lost accounts.  
+3. **Account Responsibility**  
+   - Keep your account secure; we cannot recover lost accounts.  
 
-4. **Disclaimer**  
-   - LegacyVerse is **fan-made** and **not affiliated with Roblox**.  
-   - All logos and content belong to their original owners.  
-
-5. **Android Only**  
+4. **Android Only**  
    - LegacyVerse works only on Android devices.  
 
-6. **Have Fun**  
-   - Enjoy the nostalgia and make new memories!  
+5. **Have Fun**  
+   - Enjoy the nostalgia and relive the 2014 Roblox experience safely!  
 
 ---
 
-*Step into LegacyVerse and relive 2014 Android Client!*  
+## ⚠️ Disclaimer
+
+**LegacyVerse** is a **fan-made 2014 Roblox revival**.  
+
+- All `roblox.com` servers remain safe.  
+- LegacyVerse uses its own servers for the revival environment.  
+- This project is **not affiliated with Roblox Corporation**.  
+- All Roblox logos, trademarks, and content remain the property of their respective owners.  
+
+Enjoy the 2014 Roblox vibe and share the nostalgia with friends!
