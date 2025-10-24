@@ -1,7 +1,10 @@
-<%@ Page Language="C#" AutoEventWireup="true" %>
 <!DOCTYPE html>
 <html>
-<body style="margin:0; background:#fff; display:flex; align-items:center; justify-content:center; height:100vh;">
-    <img src="avatar.webp" alt="avatar">
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="margin:0; display:flex; justify-content:center; align-items:center; height:100vh; background:#fff;">
+    <img src="../avatar.webp" alt="avatar">
+  </body>
 </html>
