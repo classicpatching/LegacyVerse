@@ -9,7 +9,7 @@ $games = [
 <ul>
 <?php foreach($games as $game): ?>
     <li>
-        <a href="start.php?placeId=<?= $game['placeId'] ?>&userId=<?= $game['userId'] ?>">
+        <a href="start?placeId=<?= $game['placeId'] ?>&userId=<?= $game['userId'] ?>">
             <?= $game['name'] ?>
         </a>
     </li>
