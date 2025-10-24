@@ -5,13 +5,13 @@ header("Access-Control-Allow-Origin: *");
 $response = [
     "Status" => "OK",
     "UserInfo" => [
-        "UserName" => "testuser",
-        "UserPassword" => "hello",
+        "UserName" => "admin",
+        "UserPassword" => "blank",
         "UserID" => 1,
-        "RobuxBalance" => 150,
-        "TicketsBalance" => 12000,
+        "RobuxBalance" => 99999,
+        "TicketsBalance" => 99999,
         "IsAnyBuildersClubMember" => true,
-        "ThumbnailUrl" => "https://14blox.strangled.net/getUserAvatarImage?userId=1"
+        "ThumbnailUrl" => "https://legacyverse.onrender.com/avatar.webp"
     ]
 ];
 
