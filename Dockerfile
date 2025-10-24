@@ -1,31 +1,28 @@
-# Use Ubuntu 22.04 (Jammy) as base
 FROM ubuntu:22.04
 
-# Prevent interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install Apache, PHP, Mono, and XSP4
+# Install Apache, PHP, and Mono with Apache module
 RUN apt-get update && \
     apt-get install -y software-properties-common ca-certificates apt-transport-https gnupg curl && \
     add-apt-repository ppa:ondrej/php && \
     apt-get update && \
-    apt-get install -y apache2 php8.2 libapache2-mod-php8.2 mono-complete mono-xsp4 && \
+    apt-get install -y apache2 php8.2 libapache2-mod-php8.2 mono-complete libapache2-mod-mono && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Copy your project
+# Copy site files
 COPY . /var/www/html/
 
-# Enable rewrite module
-RUN a2enmod rewrite
-
-# Set working directory
-WORKDIR /var/www/html/
+# Enable required modules
+RUN a2enmod rewrite && a2enmod mod_mono_auto
 
 # Permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose both ports (80 = PHP, 8080 = ASP.NET)
-EXPOSE 80 8080
+# Set working directory
+WORKDIR /var/www/html
 
-# Start both servers
-CMD service apache2 start && xsp4 --port=8080 --nonstop
+EXPOSE 80
+
+# Start Apache
+CMD ["apache2ctl", "-D", "FOREGROUND"]
