@@ -1,16 +1,19 @@
 <?php
-$placeid = isset($_GET['placeid']) ? $_GET['placeid'] : '';
-$userid = isset($_GET['userid']) ? $_GET['userid'] : '';
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Start Game</title>
-</head>
-<body>
-    <h1>Game Started!</h1>
-    <p>Place ID: <?php echo htmlspecialchars($placeid); ?></p>
-    <p>User ID: <?php echo htmlspecialchars($userid); ?></p>
-</body>
-</html>
+// start.php
+header("Content-Type: application/json");
+
+$placeId = $_GET['placeId'] ?? 1;
+$userId = $_GET['userId'] ?? 1;
+
+// This is your joinScriptUrl — points to the same start.php
+$joinUrl = "http://www.fotone.com/games/start.php?placeId={$placeId}&userId={$userId}";
+
+$response = [
+    "status" => "2",
+    "jobId" => "Test_" . $placeId,
+    "authenticationUrl" => "http://www.fotone.com/Login/Negotiate.ashx",
+    "authenticationTicket" => "SomeTicketThatDosentCrash",
+    "joinScriptUrl" => $joinUrl
+];
+
+echo json_encode($response);
