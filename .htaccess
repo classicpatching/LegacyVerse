@@ -3,29 +3,27 @@
 RewriteEngine On
 
 # ----------------------------
-# Remove .php extension from URLs
+# Universal internal rewrite for existing folders
 # ----------------------------
-# Internally rewrite requests like /list to /list.php
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
-
-# ----------------------------
-# Universal internal rewrite for directories
-# ----------------------------
-# If the request is to a directory AND does not end with a file
+# If request is to a directory and has index.php, serve it internally
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_FILENAME}/index.php -f
 RewriteRule ^(.*)$ $1/index.php [L]
 
-# Optional: redirect all other missing files to index.php
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^ index.php [L]
+# ----------------------------
+# If the request is a file and exists, serve normally
+# ----------------------------
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# ----------------------------
+# If nothing matches (file or folder does not exist), redirect to 404.php
+# ----------------------------
+RewriteRule ^.*$ /404.php [L]
 </IfModule>
 
-# Disable automatic trailing slash redirects globally
+# Disable automatic trailing slash redirect
 DirectorySlash Off
 
-# Security: prevent listing directories
+# Security: prevent directory listing
 Options -Indexes
