@@ -1,28 +1,31 @@
-FROM php:8.2-apache
+# Use Ubuntu 22.04 (Jammy) as base
+FROM ubuntu:22.04
 
-# Install required tools and add Mono repository (no apt-key)
-RUN apt-get update && apt-get install -y gnupg ca-certificates curl apt-transport-https dirmngr && \
-    mkdir -p /etc/apt/keyrings && \
-    curl -fsSL https://download.mono-project.com/repo/xamarin.gpg | gpg --dearmor -o /etc/apt/keyrings/mono.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/mono.gpg] https://download.mono-project.com/repo/debian stable-jammy main" \
-    > /etc/apt/sources.list.d/mono-official-stable.list && \
-    apt-get update && apt-get install -y mono-complete mono-xsp4 && \
-    rm -rf /var/lib/apt/lists/*
+# Prevent interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Copy project files
+# Install Apache, PHP, Mono, and XSP4
+RUN apt-get update && \
+    apt-get install -y software-properties-common ca-certificates apt-transport-https gnupg curl && \
+    add-apt-repository ppa:ondrej/php && \
+    apt-get update && \
+    apt-get install -y apache2 php8.2 libapache2-mod-php8.2 mono-complete mono-xsp4 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy your project
 COPY . /var/www/html/
 
-# Enable Apache rewrite for PHP
+# Enable rewrite module
 RUN a2enmod rewrite
 
 # Set working directory
 WORKDIR /var/www/html/
 
-# Fix permissions
+# Permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose both ports
+# Expose both ports (80 = PHP, 8080 = ASP.NET)
 EXPOSE 80 8080
 
-# Start both PHP (Apache) and ASPX (Mono)
+# Start both servers
 CMD service apache2 start && xsp4 --port=8080 --nonstop
