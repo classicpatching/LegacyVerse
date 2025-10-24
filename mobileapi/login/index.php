@@ -1,14 +1,16 @@
 <?php
-header('Content-Type: application/json; charset=UTF-8; X-Robots-Tag: noindex'); 
-echo(json_encode([
+header("Content-Type: application/json; charset=utf-8");
+
+echo json_encode([
     "Status" => "OK",
     "UserInfo" => [
+        "UserName" => "testuser",
+        "UserPassword" => "hello",
         "UserID" => 1,
-        "UserName" => "test",
-        "RobuxBalance" => 0,
-        "TicketsBalance" => 0,
-        "IsAnyBuildersClubMember" => false,
-        "ThumbnailUrl" => "http://yourthumbnail.here/or_this_can_be_a_blank"
+        "RobuxBalance" => 150,
+        "TicketsBalance" => 12000,
+        "IsAnyBuildersClubMember" => true,
+        "ThumbnailUrl" => "https://14blox.strangled.net/getUserAvatarImage?userId=1"
     ]
-],JSON_UNESCAPED_SLASHES));
+], JSON_PRETTY_PRINT);
 ?>
