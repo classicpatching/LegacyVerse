@@ -3,15 +3,22 @@
 RewriteEngine On
 
 # ----------------------------
-# Universal internal rewrite
+# Remove .php extension from URLs
+# ----------------------------
+# Internally rewrite requests like /list to /list.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# ----------------------------
+# Universal internal rewrite for directories
 # ----------------------------
 # If the request is to a directory AND does not end with a file
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_FILENAME}/index.php -f
-# Internally rewrite to index.php inside that folder
 RewriteRule ^(.*)$ $1/index.php [L]
 
-# Optional: redirect all other missing files to 404 or index.php
+# Optional: redirect all other missing files to index.php
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteRule ^ index.php [L]
