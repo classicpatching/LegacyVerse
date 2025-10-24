@@ -1,27 +1,47 @@
+# ----------------------------
+# Enable mod_rewrite
+# ----------------------------
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
 # ----------------------------
-# Serve index.php inside folders if it exists
+# 1️⃣ Serve index.php in folders
 # ----------------------------
+# If the request is to a directory and index.php exists
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_FILENAME}/index.php -f
 RewriteRule ^(.*)$ $1/index.php [L]
 
 # ----------------------------
-# Serve files if they exist
+# 2️⃣ Serve .php files without requiring .php in URL
+# Example: /games/list → /games/list.php
 # ----------------------------
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
 
 # ----------------------------
-# Redirect anything else to 404.php
+# 3️⃣ Redirect anything else to 404.php
 # ----------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^.*$ /404.php [L]
+
 </IfModule>
 
+# ----------------------------
 # Disable automatic trailing slash redirect
+# ----------------------------
 DirectorySlash Off
 
-# Prevent directory listing
+# ----------------------------
+# Security: prevent directory listing
+# ----------------------------
 Options -Indexes
+
+# ----------------------------
+# Optional: Force HTTPS (if Render allows)
+# ----------------------------
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
