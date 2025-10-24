@@ -1,5 +1,7 @@
 # LegacyVerse
 
+![ic_launcher.png](ic_launcher.png)
+
 Welcome Back…  
 To **2014**!  
 
@@ -26,7 +28,7 @@ Default Avatar You Get When Signing Up:
 ## TODO
 - [ ] Trust Check  
 - [ ] RCC  
-- [ ] Accounts  
+- [x] Accounts  
 - [ ] Games  
 - [ ] Catalog  
 - [ ] Avatar  
@@ -60,8 +62,8 @@ By using LegacyVerse:
 
 **LegacyVerse** is a **fan-made 2014 Roblox revival**.  
 
-- All `roblox.com` servers remain safe.  
-- LegacyVerse uses its own servers for the revival environment.  
+- All `roblox.com` links remain safe.  
+- LegacyVerse uses its own URLs for the revival environment.  
 - This project is **not affiliated with Roblox Corporation**.  
 - All Roblox logos, trademarks, and content remain the property of their respective owners.  
 
