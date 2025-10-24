@@ -1,23 +1,23 @@
 # Use official PHP + Apache image
 FROM php:8.2-apache
 
-# Copy all project files to the web directory
+# Copy project files
 COPY . /var/www/html/
 
-# Set working directory
-WORKDIR /var/www/html/
-
-# Enable Apache rewrite module (optional, good for clean URLs)
+# Disable directory slash redirect and allow clean PHP execution
 RUN a2enmod rewrite
+RUN echo "<Directory /var/www/html>\n\
+    Options Indexes FollowSymLinks\n\
+    AllowOverride All\n\
+    Require all granted\n\
+</Directory>\n\
+DirectorySlash Off" > /etc/apache2/conf-available/legacyverse.conf && \
+    a2enconf legacyverse
 
-# Disable DirectorySlash to prevent redirect problems
-RUN echo "DirectorySlash Off" >> /etc/apache2/apache2.conf
+# Set working directory
+WORKDIR /var/www/html
 
-# Set correct permissions
-RUN chown -R www-data:www-data /var/www/html
-
-# Expose default web port
+# Expose web port
 EXPOSE 80
 
-# Start Apache server
 CMD ["apache2-foreground"]
