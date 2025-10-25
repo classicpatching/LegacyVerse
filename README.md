@@ -17,7 +17,7 @@ Here you can:
 ## Info
 
 Default Avatar You Get When Signing Up:  
-![avatar.webp](avatar.webp)  
+![avatar.webp](assets/avatar.webp)  
 
 **New Players get:**  
 - 100 Tix  
