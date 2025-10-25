@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "UserInfo" => [
         "UserID" => 1,
         "UserName" => $_POST["username"],
-        "RobuxBalance" => 100000000,
-        "TicketsBalance" => 100000000,
+        "RobuxBalance" => 1000000,
+        "TicketsBalance" => 1000000,
         "IsAnyBuildersClubMember" => false,
         "ThumbnailUrl" => "https://legacyverse.onrender.com/1.webp"
       ]
@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "UserInfo" => [
         "UserID" => 1,
         "UserName" => $_POST["username"],
-        "RobuxBalance" => 100000000,
-        "TicketsBalance" => 100000000,
+        "RobuxBalance" => 1000000,
+        "TicketsBalance" => 1000000,
         "IsAnyBuildersClubMember" => false,
         "ThumbnailUrl" => "https://legacyverse.onrender.com/1.webp"
       ]
