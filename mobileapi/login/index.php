@@ -51,7 +51,7 @@ $users = [
         "TicketsBalance" => PHP_INT_MAX,
         "IsAnyBuildersClubMember" => false
     ],
-    "guest" => [
+    "guest 1234" => [
         "UserID" => 0,
         "UserPassword" => "guest123",
         "RobuxBalance" => 0,
