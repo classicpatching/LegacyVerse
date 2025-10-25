@@ -1,41 +1,91 @@
 <?php
 header('Content-Type: application/json');
 
-// Example users
 $users = [
-    "admin" => [
+    "Admin" => [
         "UserID" => 1,
-        "UserPassword" => "hello",
-        "RobuxBalance" => 150,
-        "TicketsBalance" => 12000,
+        "UserPassword" => "admin",
+        "RobuxBalance" => 1500,
+        "TicketsBalance" => 1200,
         "IsAnyBuildersClubMember" => true
     ],
     "qa" => [
         "UserID" => 2,
-        "UserPassword" => "1234",
+        "UserPassword" => "qa123",
         "RobuxBalance" => 500,
-        "TicketsBalance" => 3000,
+        "TicketsBalance" => 800,
+        "IsAnyBuildersClubMember" => false
+    ],
+    "David.Baszucki" => [
+        "UserID" => 3,
+        "UserPassword" => "david123",
+        "RobuxBalance" => 18500,
+        "TicketsBalance" => 17500,
+        "IsAnyBuildersClubMember" => true
+    ],
+    "erik.cassel" => [
+        "UserID" => 4,
+        "UserPassword" => "erik123",
+        "RobuxBalance" => 20000,
+        "TicketsBalance" => 19500,
+        "IsAnyBuildersClubMember" => true
+    ],
+    "Toolbox" => [
+        "UserID" => 5,
+        "UserPassword" => "toolbox",
+        "RobuxBalance" => 1200,
+        "TicketsBalance" => 800,
+        "IsAnyBuildersClubMember" => false
+    ],
+    "aden" => [
+        "UserID" => 6,
+        "UserPassword" => "aden",
+        "RobuxBalance" => 700,
+        "TicketsBalance" => 400,
+        "IsAnyBuildersClubMember" => false
+    ],
+    "roblox" => [
+        "UserID" => 7,
+        "UserPassword" => "roblox",
+        "RobuxBalance" => 200000,
+        "TicketsBalance" => 180000,
+        "IsAnyBuildersClubMember" => false
+    ],
+    "guest" => [
+        "UserID" => 8,
+        "UserPassword" => "guest",
+        "RobuxBalance" => -500,
+        "TicketsBalance" => -1000,
         "IsAnyBuildersClubMember" => false
     ]
 ];
 
-// Get username and password from POST
-$username = isset($_POST['username']) ? $_POST['username'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
+$username = isset($_POST['username']) ? $_POST['username'] : null;
+$password = isset($_POST['password']) ? $_POST['password'] : null;
 
-// Check login
+if ($username === null || $password === null) {
+    $raw = file_get_contents('php://input');
+    $json = json_decode($raw, true);
+    if (is_array($json)) {
+        if ($username === null && isset($json['username'])) $username = $json['username'];
+        if ($password === null && isset($json['password'])) $password = $json['password'];
+    }
+}
+
+$username = $username === null ? '' : (string)$username;
+$password = $password === null ? '' : (string)$password;
+
 if (!isset($users[$username]) || $users[$username]['UserPassword'] !== $password) {
-    echo json_encode(["Status" => "InvalidPassword"]);
+    echo json_encode(["Status" => "InvalidPassword"], JSON_PRETTY_PRINT);
     exit;
 }
 
-// Successful login
 $user = $users[$username];
 $response = [
     "Status" => "OK",
     "UserInfo" => [
         "UserName" => $username,
-        "UserPassword" => $user['UserPassword'], // optional to hide
+        "UserPassword" => $user['UserPassword'],
         "UserID" => $user['UserID'],
         "RobuxBalance" => $user['RobuxBalance'],
         "TicketsBalance" => $user['TicketsBalance'],
@@ -45,4 +95,5 @@ $response = [
 ];
 
 echo json_encode($response, JSON_PRETTY_PRINT);
+exit;
 ?>
