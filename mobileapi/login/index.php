@@ -52,7 +52,7 @@ $users = [
         "IsAnyBuildersClubMember" => false
     ],
     "guest" => [
-        "UserID" => 8,
+        "UserID" => 0,
         "UserPassword" => "guest123",
         "RobuxBalance" => 0,
         "TicketsBalance" => 0,
