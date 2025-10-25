@@ -1,6 +1,6 @@
 # LegacyVerse
 
-![ic_launcher.png](ic_launcher.png)
+![ic_launcher.png](assets/ic_launcher.png)
 
 Welcome Back…  
 To **2014**!  
