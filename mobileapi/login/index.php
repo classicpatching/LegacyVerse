@@ -4,59 +4,66 @@ header('Content-Type: application/json');
 $users = [
     "Admin" => [
         "UserID" => 1,
-        "UserPassword" => "admin",
+        "UserPassword" => "admPass9",
         "RobuxBalance" => 1500,
         "TicketsBalance" => 1200,
         "IsAnyBuildersClubMember" => true
     ],
     "qa" => [
         "UserID" => 2,
-        "UserPassword" => "qa123",
+        "UserPassword" => "qaPass77",
         "RobuxBalance" => 500,
         "TicketsBalance" => 800,
         "IsAnyBuildersClubMember" => false
     ],
     "David.Baszucki" => [
         "UserID" => 3,
-        "UserPassword" => "david123",
+        "UserPassword" => "dBPass42",
         "RobuxBalance" => 18500,
         "TicketsBalance" => 17500,
         "IsAnyBuildersClubMember" => true
     ],
     "erik.cassel" => [
         "UserID" => 4,
-        "UserPassword" => "erik123",
+        "UserPassword" => "eCpass88",
         "RobuxBalance" => 20000,
         "TicketsBalance" => 19500,
         "IsAnyBuildersClubMember" => true
     ],
     "Toolbox" => [
         "UserID" => 5,
-        "UserPassword" => "toolbox",
+        "UserPassword" => "toolBox7",
         "RobuxBalance" => 1200,
         "TicketsBalance" => 800,
         "IsAnyBuildersClubMember" => false
     ],
     "aden" => [
         "UserID" => 6,
-        "UserPassword" => "aden",
+        "UserPassword" => "adenPass5",
         "RobuxBalance" => 700,
         "TicketsBalance" => 400,
         "IsAnyBuildersClubMember" => false
     ],
     "roblox" => [
         "UserID" => 7,
-        "UserPassword" => "roblox",
-        "RobuxBalance" => 200000,
-        "TicketsBalance" => 180000,
+        "UserPassword" => "robLoxInfinity",
+        "RobuxBalance" => INF,
+        "TicketsBalance" => INF,
         "IsAnyBuildersClubMember" => false
     ],
     "guest" => [
         "UserID" => 8,
-        "UserPassword" => "guest",
+        "UserPassword" => "guest123",
         "RobuxBalance" => -500,
         "TicketsBalance" => -1000,
         "IsAnyBuildersClubMember" => false
+    ],
+    "John" => [
+        "UserID" => 9,
+        "UserPassword" => "johnMega",
+        "RobuxBalance" => 1000000,
+        "TicketsBalance" => 1000000,
+        "IsAnyBuildersClubMember" => true
     ]
 ];
 
