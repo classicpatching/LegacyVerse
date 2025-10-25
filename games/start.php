@@ -5,7 +5,6 @@ header("Content-Type: application/json");
 $placeid = $_GET['placeid'] ?? 1;
 $userId = $_GET['userId'] ?? 1;
 
-// This is your joinScriptUrl — points to the same start.php
 $joinUrl = "http://www.fotone.com/games/start?placeid={$placeid}&userId={$userId}";
 
 $response = [
