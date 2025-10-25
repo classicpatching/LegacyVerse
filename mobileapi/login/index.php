@@ -1,16 +1,16 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8; X-Robots-Tag: noindex');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if ($_POST["password"] == "12345678" && $_POST["username"] == "Player") {
+  if ($_POST["password"] == "0987654321123" && $_POST["username"] == "roblox") {
   echo(json_encode([
       "Status" => "OK",
       "UserInfo" => [
         "UserID" => 1,
         "UserName" => $_POST["username"],
-        "RobuxBalance" => 10,
-        "TicketsBalance" => 100,
+        "RobuxBalance" => 100000000,
+        "TicketsBalance" => 100000000,
         "IsAnyBuildersClubMember" => false,
-        "ThumbnailUrl" => "https://legacyverse.onrender.com/avatar.webp"
+        "ThumbnailUrl" => "https://legacyverse.onrender.com/1.webp"
       ]
   ],JSON_UNESCAPED_SLASHES));
   } else {
@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "UserInfo" => [
         "UserID" => 1,
         "UserName" => $_POST["username"],
-        "RobuxBalance" => 10,
-        "TicketsBalance" => 100,
+        "RobuxBalance" => 100000000,
+        "TicketsBalance" => 100000000,
         "IsAnyBuildersClubMember" => false,
-        "ThumbnailUrl" => "https://legacyverse.onrender.com/avatar.webp"
+        "ThumbnailUrl" => "https://legacyverse.onrender.com/1.webp"
       ]
   ],JSON_UNESCAPED_SLASHES));
   }
