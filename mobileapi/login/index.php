@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "RobuxBalance" => 10,
         "TicketsBalance" => 100,
         "IsAnyBuildersClubMember" => false,
-        "ThumbnailUrl" => "http://legacyverse.onrender.com/avatar.webp"
+        "ThumbnailUrl" => "https://legacyverse.onrender.com/avatar.webp"
       ]
   ],JSON_UNESCAPED_SLASHES));
   } else {
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "RobuxBalance" => 10,
         "TicketsBalance" => 100,
         "IsAnyBuildersClubMember" => false,
-        "ThumbnailUrl" => "http://legacyverse.onrender.com/avatar.webp"
+        "ThumbnailUrl" => "https://legacyverse.onrender.com/avatar.webp"
       ]
   ],JSON_UNESCAPED_SLASHES));
   }
