@@ -1,5 +1,4 @@
 <?php
-// list.php
 $games = [
     ["placeid" => 1, "name" => "Test Game", "userId" => 1],
     ["placeid" => 2, "name" => "Another Game", "userId" => 2]
