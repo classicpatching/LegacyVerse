@@ -5,6 +5,6 @@
     <title></title>
   </head>
   <body style="margin:0; display:flex; justify-content:center; align-items:center; height:100vh; background:#fff;">
-    <img src="../1.webp" alt="avatar">
+    <img src="https://14blox.strangled.net/getUserAvatarImage?userId=" alt="avatar">
   </body>
 </html>
