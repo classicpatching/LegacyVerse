@@ -1,5 +1,4 @@
 <?php
-// start.php
 header("Content-Type: application/json");
 
 $placeid = $_GET['placeid'] ?? 1;
